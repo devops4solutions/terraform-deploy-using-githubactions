@@ -1,6 +1,5 @@
 name: "Terraform Deployment"
 on:
-  # Manual trigger
   workflow_dispatch:
   push:
     paths:
@@ -20,8 +19,6 @@ jobs:
          include:
            - environment: test
              runner: ubuntu-latest
-           - environment: prod
-             runner: ubuntu-18.04
     env:
          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
